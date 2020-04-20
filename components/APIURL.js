@@ -1,2 +1,2 @@
-const APIURL='http://kamilpawlak.com:1337';
+const APIURL='https://api.kamilpawlak.com';
 export default APIURL;
