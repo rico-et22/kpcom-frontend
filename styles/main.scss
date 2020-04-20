@@ -1016,7 +1016,38 @@ nav {
         right: 5rem;
     }
 }
-
+@media (max-width: 399.98px) {
+    .about-bio-container div p {
+        font-size: 1.25rem;
+    }
+    .about-info-container {
+        width: 95%;
+    }
+    .about-info-grid {
+        column-gap: 0;
+    }
+    .about-technology-gallery-row img {
+        height: 2rem
+    }
+    .about-portfolio-images img:nth-child(1),
+    .about-portfolio-images img:nth-child(3) {
+        height: 4rem;
+    }
+    .about-portfolio-images img:nth-child(2) {
+        height: 6rem;
+    }
+    .mainpage-portfolio {
+        padding: 2rem 0;
+    }
+}
+@media (max-width: 424.98px) {
+    .about-portfolio a:hover .about-portfolio-circle {
+        left: 0;
+    }
+    .portfolio-item-container {
+        max-width: 100%;
+    }
+}
 
 
 
