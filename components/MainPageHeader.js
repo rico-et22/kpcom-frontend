@@ -24,13 +24,13 @@ export default class MainPageHeader extends Component {
         return (
             <header className='mainpage-header'>
                 <div className='mainpage-header-container'>
-                    <div className='mainpage-header-photo'>
+                    {/*<div className='mainpage-header-photo'>
                         <img src='/static/face.jpg' alt='My face'/>
-                    </div>
+        </div>*/}
                     <div className='mainpage-header-info'>
                         <h1><span>Welcome. </span>I'm Kamil.</h1>
                         <p>
-                        I’m a {this.calculateAge()} years old front-end web developer and designer. <br/>
+                        I’m a front-end web developer and designer. <br/>
                         I design & develop websites
                         mainly using technologies <br/> like React, Next.js & strapi.
                         </p>

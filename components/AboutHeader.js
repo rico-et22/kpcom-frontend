@@ -45,10 +45,6 @@ export default class AboutHeader extends Component {
         <p>{this.props.listJSON[0].text}{this.checkRelocation(this.props.listJSON[0].other[0].availableForRelocation)}</p>
                             </div>
                             <div className='about-header-infobox-item'>
-                                <img src='/static/icons/cake.svg' className='about-header-infobox-icon' alt='Age'/>
-                                <p>{this.calculateAge()}</p>
-                            </div>
-                            <div className='about-header-infobox-item'>
                                 {this.props.social.map(social => (
                                     <a href={social.link} className='about-header-infobox-link' key={social.id}>
                                         <img src={`/static/icons/${social.icon}.svg`} alt={social.name}/>
