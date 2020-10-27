@@ -9,7 +9,6 @@ It works together with a Strapi-powered API used to retrieve content elements, l
 - Custom design and CSS (not dependent on Bootstrap and other CSS frameworks/libraries)
 - CSS Grid usage
 - Design inspired by both Material and Fluent design languages
-- Fancy, colorful & smooth shadows 😁
 - SASS stylesheet
 - Bottom navbar for easier navigations on mobile devices (shows only when the viewport width is less than 992px)
 - Backend API based on strapi, sqlite db
