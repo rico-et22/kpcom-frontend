@@ -649,16 +649,18 @@ nav {
         width: 40rem
     }
 }
+@media (max-width: 991.98px) {
+    .portfolio-item-image {
+        height: 15rem;
+        width: auto;
+    }
+}
 @media (max-width: 767.98px) {
     .portfolio-item-container {
         max-width: 90%;
     }
     .portfolio-item {
         width: 30rem;
-    } 
-    .portfolio-item-image {
-        height: 15rem;
-        width: auto;
     }
     .portfolio-item-info {
         width: auto;
