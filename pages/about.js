@@ -25,7 +25,7 @@ export default class About extends Component {
         const aboutInfoTextJSON = await aboutInfoText.json()
         const aboutEducationItems = await fetch(`${APIURL}/abouteducationitems`)
         const aboutEducationItemsJSON = await aboutEducationItems.json()
-        const aboutExperienceItems = await fetch(`${APIURL}/aboutexperienceitems`)
+        const aboutExperienceItems = await fetch(`${APIURL}/aboutexperienceitems?_sort=id:DESC`)
         const aboutExperienceItemsJSON = await aboutExperienceItems.json()
         const aboutTechnologyItems = await fetch(`${APIURL}/abouttechnologyitems`)
         const aboutTechnologyItemsJSON = await aboutTechnologyItems.json()
