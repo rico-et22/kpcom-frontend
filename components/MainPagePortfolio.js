@@ -7,7 +7,7 @@ export default class MainPagePortfolio extends Component {
             <section className='mainpage-portfolio' id='portfolio'>
                 <h1>My latest projects</h1>
                 <div className='mainpage-portfolio-items'>
-                {this.props.items.slice(0, 2).map(item => (
+                {this.props.items.slice(0, 3).map(item => (
                     <MainPagePortfolioItem 
                     title={item.title}
                     technologiesUsed_thumbnail={item.technologiesUsed_thumbnail}
