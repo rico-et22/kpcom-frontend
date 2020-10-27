@@ -33,6 +33,7 @@ export default class PortfolioItem extends Component {
                             <div className='portfolio-item-down'>
                                 <div className='portfolio-item-buttons-container'>
                                     <a href={this.props.link} className='portfolio-item-button link' target='_blank' rel='noopener'>See it live</a>
+                                    {this.props.gitHubLink && <a href={this.props.gitHubLink} className='portfolio-item-button link github' target='_blank' rel='noopener'>GitHub repo</a>}
                                 </div>
                             </div>
                         </div>

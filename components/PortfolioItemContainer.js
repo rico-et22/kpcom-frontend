@@ -12,6 +12,7 @@ export default class PortfolioItemContainer extends Component {
                     image={item.image.url}
                     description={item.description}
                     link={item.link}
+                    gitHubLink={item.gitHubLink}
                     anchorID={item.anchorID}
                     json={item.technologiesUsed_JSON}
                     key={item.id}
