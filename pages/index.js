@@ -10,7 +10,7 @@ import '../styles/main.scss'
 import Head from 'next/head'
 export default class Index extends Component {
     static async getInitialProps() {
-        const portfolioItems = await fetch(`${APIURL}/portfolioitems`)
+        const portfolioItems = await fetch(`${APIURL}/portfolioitems?_sort=id:DESC`)
         const portfolioItemsJSON = await portfolioItems.json()
         const menuItems = await fetch(`${APIURL}/menuitems`)
         const menuItemsJSON = await menuItems.json()
@@ -24,8 +24,8 @@ export default class Index extends Component {
         return (
             <div id='site-root'>
                 <Head>
-                    <title>Kamil Pawlak - front-end web developer and designer</title>
-                    <meta name='description' content="I'm a passionate and aspiring web developer loving React, Next.js and Strapi. Visit this site to view my portfolio"/>
+                    <title>Kamil Pawlak - front-end web developer</title>
+                    <meta name='description' content="I'm a passionate and aspiring web developer using React, Next.js, Vue and Nuxt. Visit this site to view my portfolio"/>
                 </Head>
                 <Navbar navItems={this.props.menuItemsJSON} emails={this.props.emailsJSON} activePage='/'/>
                 <main>

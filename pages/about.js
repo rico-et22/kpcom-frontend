@@ -10,14 +10,11 @@ import AboutInfoContainer from '../components/AboutInfoContainer'
 import AboutEducationCard from '../components/AboutEducationCard'
 import AboutExperienceCard from '../components/AboutExperienceCard'
 import AboutTechnologyGallery from '../components/AboutTechnologyGallery'
-import AboutPortfolioGallery from '../components/AboutPortfolioGallery'
 import MainPageContact from '../components/MainPageContact'
 import BottomNavBar from '../components/BottomNavBar'
 
 export default class About extends Component {
     static async getInitialProps() {
-        const portfolioItems = await fetch(`${APIURL}/portfolioitems`)
-        const portfolioItemsJSON = await portfolioItems.json()
         const menuItems = await fetch(`${APIURL}/menuitems`)
         const menuItemsJSON = await menuItems.json()
         const aboutHeaderListItems = await fetch(`${APIURL}/aboutheaderlistitems`)
@@ -36,13 +33,13 @@ export default class About extends Component {
         const emailsJSON = await emails.json()
         const socialLinks = await fetch(`${APIURL}/sociallinks`)
         const socialLinksJSON = await socialLinks.json()
-        return {portfolioItemsJSON, menuItemsJSON, aboutHeaderListItemsJSON, aboutsocialLinksJSON, aboutInfoTextJSON, aboutEducationItemsJSON, aboutExperienceItemsJSON, aboutTechnologyItemsJSON, emailsJSON, socialLinksJSON}
+        return {menuItemsJSON, aboutHeaderListItemsJSON, aboutsocialLinksJSON, aboutInfoTextJSON, aboutEducationItemsJSON, aboutExperienceItemsJSON, aboutTechnologyItemsJSON, emailsJSON, socialLinksJSON}
     }
     render(){
         return (
             <div id='site-root'>
                 <Head>
-                    <title>About me • Kamil Pawlak - front-end web developer and designer</title>
+                    <title>About me • Kamil Pawlak - front-end web developer</title>
                     <meta name='description' content="My experience, skills & more"/>
                 </Head>
                 <Navbar navItems={this.props.menuItemsJSON} emails={this.props.emailsJSON} activePage='/about'/>
@@ -50,24 +47,6 @@ export default class About extends Component {
                 <main>
                     <AboutBio textJSON={this.props.aboutInfoTextJSON}/>
                     <AboutInfoContainer>
-                        <div className='about-info-grid'>
-                            <div className='about-info-grid-left'>
-                                <h1>Education</h1>
-                            </div>
-                            <div className='about-info-grid-right'>
-                                {this.props.aboutEducationItemsJSON.map(item => (
-                                    <AboutEducationCard
-                                    schoolName={item.schoolName}
-                                    degreeInfo={item.degreeInfo}
-                                    image={item.image}
-                                    location={item.location}
-                                    time={item.time}
-                                    key={item.id}
-                                    />
-                                ))}
-                                <hr className='about-info-separator'/>
-                            </div>
-                        </div>
                         <div className='about-info-grid'>
                             <div className='about-info-grid-left'>
                                 <h1>Work experience</h1>
@@ -89,6 +68,24 @@ export default class About extends Component {
                         </div>
                         <div className='about-info-grid'>
                             <div className='about-info-grid-left'>
+                                <h1>Education</h1>
+                            </div>
+                            <div className='about-info-grid-right'>
+                                {this.props.aboutEducationItemsJSON.map(item => (
+                                    <AboutEducationCard
+                                    schoolName={item.schoolName}
+                                    degreeInfo={item.degreeInfo}
+                                    image={item.image}
+                                    location={item.location}
+                                    time={item.time}
+                                    key={item.id}
+                                    />
+                                ))}
+                                <hr className='about-info-separator'/>
+                            </div>
+                        </div>
+                        <div className='about-info-grid'>
+                            <div className='about-info-grid-left'>
                                 <h1>Technologies<br/>that I use</h1>
                             </div>
                             <div className='about-info-grid-right'>
@@ -96,7 +93,6 @@ export default class About extends Component {
                             </div>
                         </div>
                     </AboutInfoContainer>
-                    <AboutPortfolioGallery items={this.props.portfolioItemsJSON}/>
                 </main>
                 <MainPageContact links={this.props.socialLinksJSON}/>
                 <BottomNavBar activePage='/about' emails={this.props.emailsJSON}/>

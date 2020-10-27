@@ -3,10 +3,10 @@ import APIURL from '../components/APIURL'
 import Link from 'next/link'
 export default class AboutPortfolioGallery extends Component {
 rearrange(items) {
-    items.sort((a,b) => (a.order > b.order) ? 1 : -1).slice(0, 3);
-    let cutOut = items.splice(1,1) [0];
-    items.splice(0,0,cutOut);
-    return items;
+    const sortedItems = items.slice(0, 3).sort((a,b) => (a.order > b.order) ? 1 : -1);
+    let cutOut = sortedItems.splice(1,1) [0];
+    sortedItems.splice(0,0,cutOut);
+    return sortedItems;
 }
 render() {
     return (

@@ -4,11 +4,10 @@ import MainPageContactLinkButton from '../components/MainPageContactLinkButton'
 export default class MainPageContact extends Component {
     copyright() {
         let date = new Date().getFullYear()
-        if (date === 2019){
-            return `© ${date} Kamil Pawlak.`
-        }
-        else{
-            return `© 2019-${date} Kamil Pawlak.`
+        if (date === 2019) {
+            return `© ${date} Kamil Pawlak`
+        } else {
+            return `© 2019-${date} Kamil Pawlak`
         }
     }
     prepare(links) {
@@ -24,14 +23,14 @@ export default class MainPageContact extends Component {
                     <br/>feel free to drop me a line 📝.</p>
                 </div>
                 <div className='mainpage-contact-right'>
-                    <MainPageContactLinkButton href='mailto:ricoet22@gmail.com' svg='email' text='ricoet22@gmail.com' email/>
+                    <MainPageContactLinkButton href='mailto:ricoet22@gmail.com' svg='email-black' text='ricoet22@gmail.com' email/>
                     <div className="mainpage-contact-buttons">
                         {this.props.links.map(link => (
                             <MainPageContactLinkButton href={link.url} svg={link.icon} text={link.text}
                             key={link.id}/>
                         ))}
                     </div>
-                    <p className='mainpage-contact-copyright'>{this.copyright()} All rights reserved. <br/> Version 1.0 React + Next.js + Strapi</p>
+                    <p className='mainpage-contact-copyright'>{this.copyright()} <br/> Version 1.1 React + Next.js + Strapi</p>
                 </div>
             </footer>
         )

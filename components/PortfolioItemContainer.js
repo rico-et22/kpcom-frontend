@@ -5,7 +5,7 @@ export default class PortfolioItemContainer extends Component {
         return (
             <div className='portfolio-page'>
                 <div className='portfolio-item-container'>
-                {this.props.items.sort((a,b) => (a.order > b.order) ? 1 : -1).map(item => (
+                {this.props.items.map(item => (
                     <PortfolioItem 
                     title={item.title}
                     technologiesUsed_thumbnail={item.technologiesUsed_thumbnail}

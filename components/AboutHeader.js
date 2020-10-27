@@ -38,7 +38,7 @@ export default class AboutHeader extends Component {
                     </div>
                     <div className='about-header-right'>
                         <h1>Kamil Pawlak</h1>
-                        <h3>Front-end web developer & designer</h3>
+                        <h3>Front-end web developer</h3>
                         <div className='about-header-infobox'>
                             <div className='about-header-infobox-item'>
                                 <img src='/static/icons/place.svg' className='about-header-infobox-icon' alt='Location'/>
@@ -53,7 +53,7 @@ export default class AboutHeader extends Component {
                                 ))}
                                 <a className='about-header-infobox-link' href={`mailto:${this.props.emails[0].email}`}>
                                     <img src={`/static/icons/email.svg`} alt='Email'/>
-                                    Contact options
+                                    Email
                                 </a>
                             </div>
                         </div>

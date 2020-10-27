@@ -28,11 +28,11 @@ export default class MainPageHeader extends Component {
                         <img src='/static/face.jpg' alt='My face'/>
         </div>*/}
                     <div className='mainpage-header-info'>
-                        <h1><span>Welcome. </span>I'm Kamil.</h1>
+                        <h1><span>Hello 👋 </span>I'm Kamil.</h1>
                         <p>
-                        I’m a front-end web developer and designer. <br/>
-                        I design & develop websites
-                        mainly using technologies <br/> like React, Next.js & strapi.
+                        I’m a front-end web developer <br/>
+                        developing websites
+                        mainly using technologies <br/> like React, Next.js, Vue and Nuxt.
                         </p>
                         <LinkButton text='More about me' href='/about'/>
                     </div>

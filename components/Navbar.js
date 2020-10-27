@@ -7,8 +7,8 @@ export default class Navbar extends Component {
             <div>
                 <nav>
                     <Link href='/'>
-                        <a className='logo-image-link'>
-                            <img src='/static/kamilcodes.svg' className='logo-image' alt='Kamil Pawlak'/>
+                        <a className="navbar-name">
+                            <h1>Kamil <span>Pawlak</span></h1>
                         </a>
                     </Link>
                     <NavbarMenu navItems={this.props.navItems} emails={this.props.emails} activePage={this.props.activePage}/>

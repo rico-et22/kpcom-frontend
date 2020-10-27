@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
 /* Main colors */
-$yellow: rgba(228,205,81,1);
-$yellow-gradient: linear-gradient(90deg, $yellow 0%, rgba(210,188,74,1) 100%);
+$yellow: rgb(190, 176, 94);
+$yellow-gradient: linear-gradient(90deg, $yellow 0%, rgb(245, 217, 77) 100%);
 /*$blue: rgba(27,35,102,1);*/
 /*$blue: rgba(41, 53, 156,1);
 $blue2: rgba(27,35,102,1);*/
@@ -19,26 +19,33 @@ body {margin: 0; padding: 0; color: $text-black}
 /* Navbar */
 nav {
     height: 5.5rem;
-    background: rgb(228,205,81);
-    background: $yellow-gradient;
+    background: rgb(13, 82, 185);
     padding: 0 8rem;
     display: flex;
     box-shadow: /*0px 25.6px 57.6px rgba(228, 205, 81, 0.3), 0px 4.8px 14.4px rgba(228, 205, 81, 0.5)*/
-        0px 6.4px 14.4px rgba(228, 205, 81, 0.3), 0px 1.2px 3.6px rgba(228, 205, 81, 0.5);
+        0px 6.4px 14.4px rgba(13, 82, 185, 0.3), 0px 1.2px 3.6px rgba(13, 82, 185, 0.5);
     justify-content: space-between;
     align-items: center;
     position: relative;
     z-index: 2000
 }
 
-.logo-image {
-    height: 3.5rem;
-    transition: 200ms ease-in-out;
+.navbar-name {
+    text-decoration: none;
+    h1 {
+        font-weight: normal;
+        font-size: 2rem;
+        margin: 0;
+        color: $text-white;
+    }
+    a {
+        text-decoration: none;
+    }
+    span {
+        font-weight: bold;
+    }
 }
 
-.logo-image:hover {
-    filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.4))
-}
 
 .navbar-menu-wrapper {
     display: flex;
@@ -63,14 +70,14 @@ nav {
 
 .navbar-menu-list > li > a {
     text-decoration: none;
-    color: $text-black
+    color: $text-white
 }
 .navbar-menu-list > li > a.active {
-    border-bottom: 4px dotted #333;
+    border-bottom: 4px dotted $text-white;
 }
 
 .navbar-menu-list > li > a:visited {
-    color: $text-black
+    color: $text-white
 }
 
 .navbar-menu-list-link-button-svg {
@@ -87,18 +94,21 @@ nav {
 
 }
 @media (max-width: 767.98px) {
-    .logo-image {
-        height: 2.5rem !important
-    }
     nav {
         height: 4rem;
-        justify-content: center
+        justify-content: center;
+        padding: 1.25rem 0;
+    }
+    .navbar-name h1 {
+        font-size: 1.5rem;
     }
 }
 /* Main page welcome header */
 .mainpage-header {
     min-height: /*26.5*/30rem;
-    background-color: #f4f4f4;
+    background: rgb(54, 113, 173);
+    box-shadow: 0px 25.6px 57.6px rgba(61, 127, 192, 0.3), 0px 4.8px 14.4px rgba(61, 127, 192, 0.5);
+    color: $text-white;
     display: flex;
     flex-direction: column;
     padding: 1rem;
@@ -330,22 +340,20 @@ nav {
 }
 /* Main Page Contact */
 .mainpage-contact {
-    background: $blue-gradient;
+    background: rgb(56, 94, 133);
     color: $text-white;
     padding: 2rem 1rem;
-    text-align: center;
     display: grid;
+    text-align: center;
     grid-template-columns: repeat(12, 1fr);
     grid-column-gap: 1rem;
 }
 .mainpage-contact-left {
     grid-column: 1 / span 6;
     align-self: center;
-    justify-self: right;
-    text-align: right
 }
 .mainpage-contact-right {
-    grid-column: 7 / span 12
+    grid-column: 7 / span 12;
 }
 .mainpage-contact-left > h1 {
     font-size: 2.25rem;
@@ -357,7 +365,8 @@ nav {
 .mainpage-contact-buttons {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly
+    justify-content: space-evenly;
+    margin: -.3rem;
 }
 .mainpage-contact-link-button {
     background-color: #fff;
@@ -368,7 +377,9 @@ nav {
     font-size: 1.5rem;
     box-shadow: 0 6.4px 14.4px 0 rgba(0,0,0,.132), 0 1.2px 3.6px 0 rgba(0,0,0,.108);
     transition: 150ms ease-in-out;
-    text-decoration: none
+    text-decoration: none;
+    align-items: center;
+    margin: .3rem;
 }
 .mainpage-contact-link-button:hover {
     transform: scale(1.1);
@@ -377,11 +388,13 @@ nav {
     transform: scale(1.0);
 }
 .mainpage-contact-link-button.email {
-    background-color: rgb(230, 88, 27);
+    background: $yellow-gradient;
+    border-radius: 1rem;
+    box-shadow: /*0px 4px 4px 1px rgba(27,35,102,0.4)*/
+    0 0.3px 0.3px rgba(102,102,102, 0.059), 0 0.7px 0.7px rgba(102,102,102, 0.086), 0 1.3px 1.3px rgba(51,51,51, 0.106), 0 2.1px 2.1px rgba(51,51,51, 0.124), 0 3.4px 3.4px rgba(51,51,51, 0.144), 0 6px 6px rgba(51,51,51, 0.171), 0 13px 13px rgba(51,51,51, 0.23);
     margin: 1rem 0 1.5rem 0;
-    color: #fff;
+    color: $text-black;
     font-size: 1.75rem;
-    box-shadow: 0 6.4px 14.4px 0 rgba(255,120,63,.132), 0 1.2px 3.6px 0 rgba(255,120,63,.108);
 }
 .mainpage-contact-link-button-svg {
     height: 2rem;
@@ -409,9 +422,9 @@ nav {
     font-style: italic
 }
 .mainpage-contact-copyright {
-    color: $text-gray;
-    margin-top: 1rem;
-    font-size: 1rem !important
+    color: rgba(255, 255, 255, .6);
+    margin-top: 1.5rem;
+    font-size: .8rem !important
 }
 @media (max-width: 767.98px) {
     .mainpage-contact-left, .mainpage-contact-right {
@@ -420,17 +433,6 @@ nav {
     }
     .mainpage-contact-right {
         margin-top: 1rem;
-    }
-}
-@media (max-width: 1151.98px) {
-    .mainpage-contact-link-button:not(:last-of-type) {
-        /*margin-bottom: .5rem;*/
-    }
-    .mainpage-contact-buttons {
-        margin: -.3rem;
-    }
-    .mainpage-contact-link-button {
-        margin: .3rem;
     }
 }
 @media (max-width: 399.98px) {
@@ -500,15 +502,16 @@ nav {
 .portfolio-page-header {
     position: relative;
     min-height: /*15.3rem;*/ 17rem;
-    box-shadow: 0px 25.6px 57.6px rgba(18, 84, 149, 0.3), 0px 4.8px 14.4px rgba(18, 84, 149, 0.5);
+    box-shadow: 0px 25.6px 57.6px rgba(61, 127, 192, 0.3), 0px 4.8px 14.4px rgba(61, 127, 192, 0.5);
+    background: rgb(54, 113, 173);
     color: $text-white;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 .portfolio-page-header-text {
-    margin-left: 8rem;
     z-index: 3;
+    text-align: center;
 }
 .portfolio-page-header-text > h1 {
     font-weight: 700;
@@ -518,15 +521,7 @@ nav {
 .portfolio-page-header-text > h2 {
     font-weight: 400;
     font-size: 1.5rem;
-    color: $text-gray
-}
-.portfolio-page-header-color {
-    background: linear-gradient(90deg, rgba(18, 84, 149,1) 59.75%, rgba(18, 84, 149, 0) 70.09%);
-    position: absolute;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 2;
+    color: $text-gray;
 }
 .portfolio-page-header-image {
     z-index: 1;
@@ -536,19 +531,6 @@ nav {
     height: 100%;
     background-size: cover;
     background-position: center
-}
-@media (max-width: 767.98px) {
-    .portfolio-page-header-text {
-        margin: 0;
-        text-align: center;
-    }
-    .portfolio-page-header-color {
-        background: 0;
-        background-color: rgba(18, 84, 149,.9);
-    }
-    .portfolio-page-header-image {
-        width: 100%;
-    }
 }
 /* Portfolio Page Container */
 .portfolio-page {
@@ -576,7 +558,7 @@ nav {
     transition: 300ms ease-in-out;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    background: linear-gradient(90deg, rgba(228, 205, 81, 0.244) 0%, rgba(210, 188, 74, 0.244) 100%), linear-gradient(80deg, #1B2366 /*49.49*/30%, #000000 101.08%);
+    background: rgb(92, 103, 112);
     margin-bottom: 1.5rem
 }
 .portfolio-item:hover {
@@ -686,12 +668,12 @@ nav {
 .about-header {
     position: relative;
     min-height: 17rem;
-    box-shadow: 0px 25.6px 57.6px rgba(18, 84, 149, 0.3), 0px 4.8px 14.4px rgba(18, 84, 149, 0.5);
     color: $text-white;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #125495;
+    box-shadow: 0px 25.6px 57.6px rgba(61, 127, 192, 0.3), 0px 4.8px 14.4px rgba(61, 127, 192, 0.5);
+    background: rgb(54, 113, 173);
 }
 .about-header-container {
     display: flex;
@@ -920,12 +902,6 @@ nav {
     align-items: center;
     border-radius: 40%;
     margin-left: 1rem;
-    position: relative;
-    transition: 300ms ease-in-out;
-    left: 0;
-}
-.about-portfolio a:hover .about-portfolio-circle {
-    left: 1rem;
 }
 .about-portfolio-circle img {
     height: 2.25rem;
@@ -1072,11 +1048,11 @@ nav {
 .link-button {
     font-size: 1.5rem;
     padding: .75rem 1rem;
-    background: $blue-gradient;
+    background: $yellow-gradient;
     border-radius: 1rem;
     box-shadow: /*0px 4px 4px 1px rgba(27,35,102,0.4)*/
-    0 0.3px 0.3px rgba(27,35,102, 0.059), 0 0.7px 0.7px rgba(27,35,102, 0.086), 0 1.3px 1.3px rgba(27,35,102, 0.106), 0 2.1px 2.1px rgba(27,35,102, 0.124), 0 3.4px 3.4px rgba(27,35,102, 0.144), 0 6px 6px rgba(27,35,102, 0.171), 0 13px 13px rgba(27,35,102, 0.23);
-    color: #f0f0f0;
+    0 0.3px 0.3px rgba(102,102,102, 0.059), 0 0.7px 0.7px rgba(102,102,102, 0.086), 0 1.3px 1.3px rgba(51,51,51, 0.106), 0 2.1px 2.1px rgba(51,51,51, 0.124), 0 3.4px 3.4px rgba(51,51,51, 0.144), 0 6px 6px rgba(51,51,51, 0.171), 0 13px 13px rgba(51,51,51, 0.23);
+    color: $text-black;
     text-decoration: none;
     transition: 150ms ease-in-out;
     display: inline-flex;
