@@ -1,6 +1,6 @@
 # kpcom-frontend - [kamilpawlak.com](https://kamilpawlak.com) frontend web app
 This is the real front-end that powers my personal portfolio site - kamilpawlak.com.
-It works together with a Strapi-powered API used to retrieve content elements, like portfolio items or CV sections.
+It works together with a Contentful-powered API used to retrieve content elements, like portfolio items or CV sections.
 
 # Features 🚀
 - Powered by React and Next.js
