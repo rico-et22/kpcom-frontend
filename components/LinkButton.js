@@ -1,23 +1,21 @@
-import {Component} from 'react'
 import Link from 'next/link'
-export default class LinkButton extends Component {
-    render() {
-        if (this.props.href) {
-            return (
-                <Link href={this.props.href}>
-                    <a href={this.props.href} className='link-button'>
-                        {this.props.text}
-                        {this.props.children}
-                    </a>
-                </Link>
-            )
-        }
-        else {
-            return (
-                <a href='#' className='link-button'>
-                    {this.props.text}
-                </a>
-            )
-        }
-    }
+
+export default function LinkButton(props) {
+  if (props.href) {
+    return (
+      <Link href={props.href}>
+        <a href={props.href} className='link-button'>
+          {props.text}
+          {props.children}
+        </a>
+      </Link>
+    )
+  }
+  else {
+    return (
+      <a href='#' className='link-button'>
+        {props.text}
+      </a>
+    )
+  }
 }

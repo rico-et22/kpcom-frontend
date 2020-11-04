@@ -1,13 +1,9 @@
-import {Component} from 'react'
-
-export default class AboutInfoContainer extends Component {
-    render() {
-        return (
-            <section className='about-info'>
-                <div className='about-info-container'>
-                    {this.props.children}
-                </div>
-            </section>
-        )
-    }
+export default function AboutInfoContainer(props) {
+  return (
+    <section className='about-info'>
+      <div className='about-info-container'>
+        {props.children}
+      </div>
+    </section>
+  )
 }

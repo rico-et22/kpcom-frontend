@@ -1,24 +1,22 @@
-import {Component} from 'react'
 import Link from 'next/link'
-export default class BottomNavItem extends Component {
-    checkActive() {
-        if (this.props.href === this.props.active) {
-            return "bottom-nav-item active";
-        }
-        else {
-            return "bottom-nav-item";
-        }
+
+export default function BottomNavItem(props) {
+  const checkActive = () => {
+    if (props.href === props.active) {
+      return "bottom-nav-item active";
     }
-    render() {
-        return (
-            <li>
-                <Link href={this.props.href}>
-                    <a href={this.props.href} style={{'display':'flex', 'flex-direction':'column', alignItems:'center'}} className={this.checkActive()}>
-                        <img src={`/static/icons/${this.props.icon}.svg`} className='bottom-nav-item-svg' alt={this.props.icon}/>
-                        <p style={{fontSize:'.75rem'}}>{this.props.caption}</p>
-                    </a>
-                </Link>
-            </li>
-        )
+    else {
+      return "bottom-nav-item";
     }
+  }
+  return (
+    <li>
+      <Link href={props.href}>
+        <a href={props.href} style={{'display':'flex', 'flex-direction':'column', alignItems:'center'}} className={checkActive()}>
+          <img src={`/static/icons/${props.icon}.svg`} className='bottom-nav-item-svg' alt={props.icon}/>
+          <p style={{fontSize:'.75rem'}}>{props.caption}</p>
+        </a>
+      </Link>
+    </li>
+  )
 }
