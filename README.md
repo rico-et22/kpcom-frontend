@@ -5,17 +5,10 @@ It works together with a Strapi-powered API used to retrieve content elements, l
 # Features 🚀
 - Powered by React and Next.js
 - Dynamic page loading
-- Server-side rendering
+- Static site generation
 - Custom design and CSS (not dependent on Bootstrap and other CSS frameworks/libraries)
 - CSS Grid usage
 - Design inspired by both Material and Fluent design languages
 - SASS stylesheet
 - Bottom navbar for easier navigations on mobile devices (shows only when the viewport width is less than 992px)
-- Backend API based on strapi, sqlite db
-- API address is kept in a separate JS file for easy modification
-# Checklist for future releases 👀
-- Dark mode
-- redesign the portfolio cards
-- Polish language support
-- Favicon
-- Integrate static HTML ?
+- Contentful GraphQL API for retrieving data (handled by Apollo)
