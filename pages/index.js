@@ -38,18 +38,14 @@ export async function getStaticProps() {
         link
         }
       }
-      portfolioItemCollection {
+      portfolioItemCollection(order:[sys_publishedAt_ASC]) {
         items {
-        title
-        image {
-          url
-        }
-        description
-        previewLink
-        repoLink
-        usesInternalPreview
-        anchorId
-        technologiesUsed
+          title
+          image {
+            url
+          }
+          anchorId
+          technologiesUsed
         }
       }
       socialLinkCollection {
@@ -73,7 +69,7 @@ export async function getStaticProps() {
     props: {
       menuItems: apolloClient.cache.extract().ROOT_QUERY.menuItemCollection.items,
       emails: apolloClient.cache.extract().ROOT_QUERY.emailCollection.items,
-      portfolioItems: apolloClient.cache.extract().ROOT_QUERY.portfolioItemCollection.items,
+      portfolioItems: apolloClient.cache.extract().ROOT_QUERY['portfolioItemCollection({"order":["sys_publishedAt_ASC"]})'].items,
       socialLinks: apolloClient.cache.extract().ROOT_QUERY.socialLinkCollection.items
     }
   }

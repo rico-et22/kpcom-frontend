@@ -8,11 +8,9 @@ export default function MainPagePortfolio(props) {
       <div className='mainpage-portfolio-items'>
       {props.items.slice(0, 3).map((item, index) => (
         <MainPagePortfolioItem 
-        title={item.title}
-        technologiesUsed_thumbnail={item.technologiesUsed_thumbnail}
-        image={item.image.url}
-        anchorID={item.anchorID}
-        key={index}/>
+          itemData={item}
+          key={index}
+        />
       ))}
       </div>
       <LinkButton href='/portfolio' text='See more'/>

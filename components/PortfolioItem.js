@@ -1,15 +1,15 @@
 export default function PortfolioItem(props) {
-  const { anchorID, image, title, technologiesUsed, description, previewLink, repoLink } = props.itemData
+  const { anchorId, image, title, technologiesUsed, description, previewLink, repoLink, date } = props.itemData
   return (
-    <div className='portfolio-item' id={anchorID}>
+    <div className='portfolio-item' id={anchorId}>
       <div className='portfolio-item-image' style={{backgroundImage:`url('${image.url}')`}}></div>
       <div className='portfolio-item-info'>
         <div className='portfolio-item-up'>
           <div className='portfolio-item-title'>
-            <h3>{title ? title : 'Project name'}</h3>
+            <h3>{title ? title : 'Project name'} <span>{date}</span></h3>
             <div>{technologiesUsed ? technologiesUsed.map(tech => <p className='portfolio-item-tech-breadcrumb' key={tech}>{tech}</p>) : 'Technologies used'}</div>
           </div>
-          <p>{description ? description : 'No description provided'}</p>
+          <p className='portfolio-item-description'>{description ? description : 'No description provided'}</p>
         </div>
         <div className='portfolio-item-down'>
           <div className='portfolio-item-buttons-container'>

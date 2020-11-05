@@ -1,7 +1,7 @@
 export default function AboutHeader(props) {
   const checkRelocation = (value) => {
     if (value == false) {
-      return <span className='about-header-infobox-noremote'> • Remote work only, not available for relocation</span>;
+      return <span className='about-header-infobox-noremote'> • Remote or local work only, not available for relocation</span>;
     }
   }
   return (

@@ -12,9 +12,9 @@ export default function MainPageContact(props) {
   return (
     <footer className='mainpage-contact'>
       <div className='mainpage-contact-left'>
-        <h1>Get in touch ✉</h1>
-        <p>If you are interested in my work and want to do something with me,
-        <br/>feel free to drop me a line 📝.</p>
+        <h1>Let's work together 👨‍💻</h1>
+        <p>If you have any job offers or simply want to talk,
+        <br/>feel free to connect 🙂.</p>
       </div>
       <div className='mainpage-contact-right'>
         <MainPageContactLinkButton href='mailto:ricoet22@gmail.com' svg='email-black' text='ricoet22@gmail.com' email/>
@@ -24,7 +24,7 @@ export default function MainPageContact(props) {
             key={index}/>
           ))}
         </div>
-        <p className='mainpage-contact-copyright'>{copyright()} <br/> Version 1.2 React + Next.js + Contentful</p>
+        <p className='mainpage-contact-copyright'>{copyright()} <br/> Version 1.3 React + Next.js + Contentful</p>
       </div>
     </footer>
   )
