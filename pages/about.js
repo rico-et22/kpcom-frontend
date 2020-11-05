@@ -17,7 +17,8 @@ export function About(props) {
     <div id='site-root'>
       <Head>
         <title>About me • Kamil Pawlak - front-end web developer</title>
-        <meta name='description' content="My experience, skills & more"/>
+        <meta property="og:url" content="https://kamilpawlak.com/about" />
+        <meta property="og:title" content="About me • Kamil Pawlak - front-end web developer" />
       </Head>
       <Navbar navItems={props.menuItems} emails={props.emails} activePage='/about'/>
       <AboutHeader location={props.aboutLocationInfo} social={props.aboutSocialLinks} emails={props.emails}/>

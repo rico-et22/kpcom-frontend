@@ -13,7 +13,8 @@ function Index(props) {
     <div id='site-root'>
       <Head>
         <title>Kamil Pawlak - front-end web developer</title>
-        <meta name='description' content="I'm a passionate and aspiring web developer using React, Next.js, Vue and Nuxt. Visit this site to view my portfolio"/>
+        <meta property="og:url" content="https://kamilpawlak.com" />
+        <meta property="og:title" content="Kamil Pawlak - front-end web developer" />
       </Head>
       <Navbar navItems={props.menuItems} emails={props.emails} activePage='/'/>
       <main>

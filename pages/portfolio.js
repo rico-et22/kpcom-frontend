@@ -13,7 +13,8 @@ export function Portfolio(props) {
     <div id='site-root'>
       <Head>
         <title>Portfolio • Kamil Pawlak - front-end web developer</title>
-        <meta name='description' content="Check my recent web development & design projects."/>
+        <meta property="og:url" content="https://kamilpawlak.com/portfolio" />
+        <meta property="og:title" content="Portfolio • Kamil Pawlak - front-end web developer" />
       </Head>
         <Navbar navItems={props.menuItems} emails={props.emails} activePage='/portfolio'/>
         <PortfolioPageHeader/>

@@ -13,7 +13,14 @@ class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
-          
+          <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+          <link rel="icon" type="image/png" href="/favicon.png"/>
+          <link rel="manifest" href="/site.webmanifest"/>
+          <meta name="msapplication-TileColor" content="#da532c"/>
+          <meta name="theme-color" content="#0282cd"/>
+          <meta property="og:image" content="https://kamilpawlak.com/og-image.jpg" />
+          <meta name='description' content="I'm a passionate web developer using React, Next.js, Vue, Nuxt and experimenting with other front-end/JAMStack tech. Visit this site to view my work 😃"/>
+          <meta property="og:description" content="I'm a passionate web developer using React, Next.js, Vue, Nuxt and experimenting with other front-end/JAMStack tech. Visit this site to view my work 😃" />
         </Head>
         <body>
           <Main />
