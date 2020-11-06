@@ -20,7 +20,7 @@ function Index(props) {
       <main>
         <MainPageHeader/>
         <MainPagePortfolio items={props.portfolioItems}/>
-        <MainPageContact links={props.socialLinks}/>
+        <MainPageContact links={props.socialLinks} emails={props.emails}/>
       </main>
       <BottomNavBar activePage='/' emails={props.emails}/>
     </div>

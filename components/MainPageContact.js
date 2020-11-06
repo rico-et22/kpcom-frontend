@@ -17,7 +17,7 @@ export default function MainPageContact(props) {
         <br/>feel free to connect 🙂.</p>
       </div>
       <div className='mainpage-contact-right'>
-        <MainPageContactLinkButton href='mailto:ricoet22@gmail.com' svg='email-black' text='ricoet22@gmail.com' email/>
+        <MainPageContactLinkButton href={`mailto:${props.emails[0].email}`} svg='email-black' text={props.emails[0].email} email/>
         <div className="mainpage-contact-buttons">
           {props.links.map((link, index) => (
             <MainPageContactLinkButton href={link.url} svg={link.icon} text={link.text}

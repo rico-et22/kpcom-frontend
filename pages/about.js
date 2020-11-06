@@ -72,7 +72,7 @@ export function About(props) {
           </div>
         </AboutInfoContainer>
       </main>
-      <MainPageContact links={props.socialLinks}/>
+      <MainPageContact links={props.socialLinks} emails={props.emails}/>
       <BottomNavBar activePage='/about' emails={props.emails}/>
     </div>
   )

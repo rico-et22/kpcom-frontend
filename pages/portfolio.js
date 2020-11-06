@@ -21,7 +21,7 @@ export function Portfolio(props) {
         <main>
           <PortfolioItemContainer items={props.portfolioItems}/>
         </main>
-        <MainPageContact links={props.socialLinks}/>
+        <MainPageContact links={props.socialLinks} emails={props.emails}/>
         <BottomNavBar activePage='/portfolio' emails={props.emails}/>
     </div>
   )
