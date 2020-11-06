@@ -21,7 +21,7 @@ export default function AboutHeader(props) {
             </div>
             <div className='about-header-infobox-item'>
               {props.social.map((social, index) => (
-                <a href={social.link} className='about-header-infobox-link' key={index}>
+                <a href={social.link} className='about-header-infobox-link' key={index} target="_blank" rel="noopener noreferrer">
                   <img src={`/static/icons/${social.icon}.svg`} alt={social.name}/>
                   {social.name}
                 </a>
@@ -31,6 +31,14 @@ export default function AboutHeader(props) {
                 Email
               </a>
             </div>
+            {props.resumeLinks ? (
+              <div className='about-header-infobox-item'>
+                <a className='about-header-infobox-link' href={props.resumeLinks[0].url} target="_blank" rel="noopener noreferrer">
+                  <img src='/static/icons/account-details-white.svg' alt='Resume'/>
+                  My CV/resume
+                </a>
+              </div>
+            ) : null}
           </div>
         </div>
       </div>

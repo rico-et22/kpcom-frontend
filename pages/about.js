@@ -21,7 +21,7 @@ export function About(props) {
         <meta property="og:title" content="About me • Kamil Pawlak - front-end web developer" />
       </Head>
       <Navbar navItems={props.menuItems} emails={props.emails} activePage='/about'/>
-      <AboutHeader location={props.aboutLocationInfo} social={props.aboutSocialLinks} emails={props.emails}/>
+      <AboutHeader location={props.aboutLocationInfo} social={props.aboutSocialLinks} emails={props.emails} resumeLinks={props.resumeLinks}/>
       <main>
         <AboutBio text={props.aboutInfoText}/>
         <AboutInfoContainer>
@@ -152,6 +152,11 @@ export async function getStaticProps() {
           email
         }
       }
+      resumeLinkCollection {
+        items {
+          url
+        }
+      }
     }
     `,
   })
@@ -165,7 +170,8 @@ export async function getStaticProps() {
       aboutInfoText: apolloClient.cache.extract().ROOT_QUERY.aboutPageInfoTextCollection.items,
       aboutExperienceItems: apolloClient.cache.extract().ROOT_QUERY.aboutPageExperienceItemCollection.items,
       aboutEducationItems: apolloClient.cache.extract().ROOT_QUERY.aboutPageEducationItemCollection.items,
-      aboutTechnologyItems: apolloClient.cache.extract().ROOT_QUERY['aboutPageTechnologyItemCollection({"order":["sys_publishedAt_ASC"]})'].items
+      aboutTechnologyItems: apolloClient.cache.extract().ROOT_QUERY['aboutPageTechnologyItemCollection({"order":["sys_publishedAt_ASC"]})'].items,
+      resumeLinks: apolloClient.cache.extract().ROOT_QUERY.resumeLinkCollection.items
     }
   }
 }
