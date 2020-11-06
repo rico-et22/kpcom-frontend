@@ -830,6 +830,8 @@ nav {
 }
 .about-info-card-image /*optimized for 1:1*/{
     height: 4.875rem;
+    max-width: 4.875rem;
+    object-fit: contain;
 }
 .about-info-card-image-mobile {
     display: none;
@@ -965,8 +967,10 @@ nav {
     }
     .about-info-card-image-mobile {
         height: 3rem;
+        max-width: 3rem;
         display: block;
         margin-right: 1rem;
+        object-fit: contain;
     }
     .about-info-card-right {
         margin: 1.78125rem 1.25rem 1.78125rem 1.25rem;
