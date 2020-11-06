@@ -46,6 +46,15 @@ export function About(props) {
           </div>
           <div className='about-info-grid'>
             <div className='about-info-grid-left'>
+              <h1>Technologies<br/>that I use</h1>
+            </div>
+            <div className='about-info-grid-right'>
+              <AboutTechnologyGallery images={props.aboutTechnologyItems}/>
+              <hr className='about-info-separator'/>
+            </div>
+          </div>
+          <div className='about-info-grid'>
+            <div className='about-info-grid-left'>
               <h1>Education</h1>
             </div>
             <div className='about-info-grid-right'>
@@ -59,15 +68,6 @@ export function About(props) {
                 key={index}
                 />
               ))}
-              <hr className='about-info-separator'/>
-            </div>
-          </div>
-          <div className='about-info-grid'>
-            <div className='about-info-grid-left'>
-              <h1>Technologies<br/>that I use</h1>
-            </div>
-            <div className='about-info-grid-right'>
-              <AboutTechnologyGallery images={props.aboutTechnologyItems}/>
             </div>
           </div>
         </AboutInfoContainer>
