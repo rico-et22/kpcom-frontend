@@ -888,14 +888,13 @@ nav {
     height: .0625rem;
 }
 .about-technology-gallery {
-    margin-top: 2rem;
+    margin: 1rem -1rem 2.9375rem -1rem;
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 3.9375rem;
 }
 .about-technology-gallery img {
-    height: 4rem;
-    margin-right: 3vw;
+    height: 3rem;
+    margin: 1rem;
 }
 .about-portfolio {
     background-color: #f4f4f4;
@@ -1034,6 +1033,9 @@ nav {
         height: 5rem;
         right: 5rem;
     }
+    .about-technology-gallery img {
+        height: 2rem
+    }
 }
 @media (max-width: 399.98px) {
     .about-bio-container div p {
@@ -1044,9 +1046,6 @@ nav {
     }
     .about-info-grid {
         column-gap: 0;
-    }
-    .about-technology-gallery-row img {
-        height: 2rem
     }
     .about-portfolio-images img:nth-child(1),
     .about-portfolio-images img:nth-child(3) {

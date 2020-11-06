@@ -131,7 +131,7 @@ export async function getStaticProps() {
           }
         }
       }
-      aboutPageTechnologyItemCollection(order: [sys_id_ASC]) {
+      aboutPageTechnologyItemCollection(order: [sys_publishedAt_ASC]) {
         items {
           name
           logo {
@@ -165,7 +165,7 @@ export async function getStaticProps() {
       aboutInfoText: apolloClient.cache.extract().ROOT_QUERY.aboutPageInfoTextCollection.items,
       aboutExperienceItems: apolloClient.cache.extract().ROOT_QUERY.aboutPageExperienceItemCollection.items,
       aboutEducationItems: apolloClient.cache.extract().ROOT_QUERY.aboutPageEducationItemCollection.items,
-      aboutTechnologyItems: apolloClient.cache.extract().ROOT_QUERY['aboutPageTechnologyItemCollection({"order":["sys_id_ASC"]})'].items
+      aboutTechnologyItems: apolloClient.cache.extract().ROOT_QUERY['aboutPageTechnologyItemCollection({"order":["sys_publishedAt_ASC"]})'].items
     }
   }
 }
