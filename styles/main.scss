@@ -445,12 +445,12 @@ nav {
         align-self: center;
     }
 }
-@media (max-width: 399.98px) {
-    .mainpage-contact-link-button.email {
-        font-size: 1.5rem;
-    }
-    .mainpage-contact-link-button.email > .mainpage-contact-link-button-svg {
-        height: 2rem;
+@media (max-width: 499.98px) {
+    .mainpage-contact-link-button, .mainpage-contact-link-button.email {
+        font-size: 1.25rem;
+        .mainpage-contact-link-button-svg {
+            height: 1.5rem;
+        }
     }
 }
 @media (max-width: 319.98px) {
