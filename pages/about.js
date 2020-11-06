@@ -7,7 +7,7 @@ import AboutInfoContainer from '../components/AboutInfoContainer'
 import AboutEducationCard from '../components/AboutEducationCard'
 import AboutExperienceCard from '../components/AboutExperienceCard'
 import AboutTechnologyGallery from '../components/AboutTechnologyGallery'
-import MainPageContact from '../components/MainPageContact'
+import ContactFooter from '../components/ContactFooter'
 import BottomNavBar from '../components/BottomNavBar'
 import { gql } from '@apollo/client'
 import { initializeApollo } from '../lib/apolloClient'
@@ -72,7 +72,7 @@ export function About(props) {
           </div>
         </AboutInfoContainer>
       </main>
-      <MainPageContact links={props.socialLinks} emails={props.emails}/>
+      <ContactFooter links={props.socialLinks} emails={props.emails}/>
       <BottomNavBar activePage='/about' emails={props.emails}/>
     </div>
   )

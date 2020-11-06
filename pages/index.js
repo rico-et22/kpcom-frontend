@@ -1,7 +1,7 @@
 import Navbar from '../components/Navbar'
 import MainPageHeader from '../components/MainPageHeader'
 import MainPagePortfolio from '../components/MainPagePortfolio'
-import MainPageContact from '../components/MainPageContact'
+import ContactFooter from '../components/ContactFooter'
 import BottomNavBar from '../components/BottomNavBar'
 import '../styles/main.scss'
 import Head from 'next/head'
@@ -20,7 +20,7 @@ function Index(props) {
       <main>
         <MainPageHeader/>
         <MainPagePortfolio items={props.portfolioItems}/>
-        <MainPageContact links={props.socialLinks} emails={props.emails}/>
+        <ContactFooter links={props.socialLinks} emails={props.emails}/>
       </main>
       <BottomNavBar activePage='/' emails={props.emails}/>
     </div>

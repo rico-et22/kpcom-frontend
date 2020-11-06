@@ -342,8 +342,8 @@ nav {
         display: none;
     }
 }
-/* Main Page Contact */
-.mainpage-contact {
+/* Contact Footer */
+.contact-footer {
     background: radial-gradient(circle at 22.4% 21.7%, rgb(0, 102, 150) 0%, rgb(4, 62, 136) 100.2%);
     color: $text-white;
     padding: 2rem 1rem;
@@ -352,27 +352,27 @@ nav {
     grid-template-columns: repeat(12, 1fr);
     grid-column-gap: 1rem;
 }
-.mainpage-contact-left {
+.contact-footer-left {
     grid-column: 1 / span 6;
     align-self: center;
 }
-.mainpage-contact-right {
+.contact-footer-right {
     grid-column: 7 / span 12;
 }
-.mainpage-contact-left > h1 {
+.contact-footer-left > h1 {
     font-size: 2.25rem;
     margin-bottom: .75rem
 }
-.mainpage-contact-left > p {
+.contact-footer-left > p {
     font-size: 1.25rem;
 }
-.mainpage-contact-buttons {
+.contact-footer-buttons {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin: -.3rem;
 }
-.mainpage-contact-link-button {
+.contact-footer-link-button {
     background-color: #fff;
     color: #333;
     padding: .5rem 1rem;
@@ -385,13 +385,13 @@ nav {
     align-items: center;
     margin: .3rem;
 }
-.mainpage-contact-link-button:hover {
+.contact-footer-link-button:hover {
     transform: scale(1.1);
 }
-.mainpage-contact-link-button:active {
+.contact-footer-link-button:active {
     transform: scale(1.0);
 }
-.mainpage-contact-link-button.email {
+.contact-footer-link-button.email {
     background: $yellow-gradient;
     border-radius: 1rem;
     box-shadow: /*0px 4px 4px 1px rgba(27,35,102,0.4)*/
@@ -400,14 +400,14 @@ nav {
     color: $text-black;
     font-size: 1.75rem;
 }
-.mainpage-contact-link-button-svg {
+.contact-footer-link-button-svg {
     height: 2rem;
     margin-right: .5rem;
 }
-.mainpage-contact-link-button.email > .mainpage-contact-link-button-svg {
+.contact-footer-link-button.email > .contact-footer-link-button-svg {
     height: 2.5rem;
 }
-.mainpage-contact-border {
+.contact-footer-border {
     background: none;
     border: 2px $yellow solid;
     color: $text-white;
@@ -416,45 +416,45 @@ nav {
     transition: 300ms ease-in-out;
     font-size: 1.5rem
 }
-.mainpage-contact-border:hover {
+.contact-footer-border:hover {
     background: $yellow-gradient;
     color: $text-black
 }
-.mainpage-contact-separator {
+.contact-footer-separator {
     color: $text-gray;
     margin: 1rem 0 1.45rem 0;
     font-style: italic
 }
-.mainpage-contact-copyright {
+.contact-footer-copyright {
     color: rgba(255, 255, 255, .6);
     margin-top: 1.5rem;
     font-size: .8rem !important
 }
 @media (max-width: 767.98px) {
-    .mainpage-contact-left, .mainpage-contact-right {
+    .contact-footer-left, .contact-footer-right {
         grid-column: 1 / span 12;
         text-align: center;
     }
-    .mainpage-contact-right {
+    .contact-footer-right {
         margin-top: 1rem;
     }
-    .mainpage-contact-buttons {
+    .contact-footer-buttons {
         flex-direction: column;
     }
-    .mainpage-contact-link-button {
+    .contact-footer-link-button {
         align-self: center;
     }
 }
 @media (max-width: 499.98px) {
-    .mainpage-contact-link-button, .mainpage-contact-link-button.email {
+    .contact-footer-link-button, .contact-footer-link-button.email {
         font-size: 1.25rem;
-        .mainpage-contact-link-button-svg {
+        .contact-footer-link-button-svg {
             height: 1.5rem;
         }
     }
 }
 @media (max-width: 319.98px) {
-    .mainpage-contact-link-button.email {
+    .contact-footer-link-button.email {
         font-size: 1.25rem;
         display: flex;
         align-items: center;

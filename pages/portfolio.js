@@ -1,7 +1,7 @@
 import Navbar from '../components/Navbar'
 import PortfolioPageHeader from '../components/PortfolioPageHeader'
 import PortfolioItemContainer from '../components/PortfolioItemContainer'
-import MainPageContact from '../components/MainPageContact'
+import ContactFooter from '../components/ContactFooter'
 import BottomNavBar from '../components/BottomNavBar'
 import '../styles/main.scss'
 import Head from 'next/head'
@@ -21,7 +21,7 @@ export function Portfolio(props) {
         <main>
           <PortfolioItemContainer items={props.portfolioItems}/>
         </main>
-        <MainPageContact links={props.socialLinks} emails={props.emails}/>
+        <ContactFooter links={props.socialLinks} emails={props.emails}/>
         <BottomNavBar activePage='/portfolio' emails={props.emails}/>
     </div>
   )
