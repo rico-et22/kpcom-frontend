@@ -2,6 +2,7 @@ import React from 'react'
 import App from 'next/app'
 import Router from 'next/router'
 import { initGA, logPageView } from '../utils/analytics'
+import '../styles/main.scss'
 
 export default class MyApp extends App {
   componentDidMount() {

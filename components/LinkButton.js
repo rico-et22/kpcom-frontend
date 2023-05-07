@@ -1,21 +1,18 @@
-import Link from 'next/link'
+import Link from "next/link";
 
 export default function LinkButton(props) {
   if (props.href) {
     return (
-      <Link href={props.href}>
-        <a href={props.href} className='link-button'>
-          {props.text}
-          {props.children}
-        </a>
+      <Link href={props.href} className="link-button">
+        {props.text}
+        {props.children}
       </Link>
-    )
-  }
-  else {
+    );
+  } else {
     return (
-      <a href='#' className='link-button'>
+      <a href="#" className="link-button">
         {props.text}
       </a>
-    )
+    );
   }
 }

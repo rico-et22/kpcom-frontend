@@ -1,4 +1,4 @@
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 
 export const initGA = () => {
   ReactGA.initialize('G-YXX74YFEQC')
@@ -6,7 +6,6 @@ export const initGA = () => {
 
 export const logPageView = () => {
   ReactGA.set({ page: window.location.pathname })
-  ReactGA.pageview(window.location.pathname)
 }
 
 export const logEvent = (category = '', action = '') => {

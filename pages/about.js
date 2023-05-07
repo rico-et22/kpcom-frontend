@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import '../styles/main.scss'
 import Navbar from '../components/Navbar'
 import AboutHeader from '../components/AboutHeader'
 import AboutBio from '../components/AboutBio'
