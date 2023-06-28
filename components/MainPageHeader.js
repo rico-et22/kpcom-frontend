@@ -12,7 +12,7 @@ export default function MainPageHeader(props) {
           <p>
           I’m a front-end web developer <br/>
           developing websites
-          mainly using technologies <br/> like React, Next.js, Vue and Nuxt.
+          mainly using technologies <br/> like React, Next.js and more.
           </p>
           <LinkButton text='More about me' href='/about'/>
         </div>

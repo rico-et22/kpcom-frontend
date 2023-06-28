@@ -1,83 +1,95 @@
-import Navbar from '../components/Navbar'
-import PortfolioPageHeader from '../components/PortfolioPageHeader'
-import PortfolioItemContainer from '../components/PortfolioItemContainer'
-import ContactFooter from '../components/ContactFooter'
-import BottomNavBar from '../components/BottomNavBar'
-import Head from 'next/head'
-import { gql } from '@apollo/client'
-import { initializeApollo } from '../lib/apolloClient'
+import Navbar from "../components/Navbar";
+import PortfolioPageHeader from "../components/PortfolioPageHeader";
+import PortfolioItemContainer from "../components/PortfolioItemContainer";
+import ContactFooter from "../components/ContactFooter";
+import BottomNavBar from "../components/BottomNavBar";
+import Head from "next/head";
+import { gql } from "@apollo/client";
+import { initializeApollo } from "../lib/apolloClient";
 
 export function Portfolio(props) {
   return (
-    <div id='site-root'>
+    <div id="site-root">
       <Head>
         <title>Portfolio • Kamil Pawlak - front-end web developer</title>
         <meta property="og:url" content="https://kamilpawlak.com/portfolio" />
-        <meta property="og:title" content="Portfolio • Kamil Pawlak - front-end web developer" />
+        <meta
+          property="og:title"
+          content="Portfolio • Kamil Pawlak - front-end web developer"
+        />
       </Head>
-        <Navbar navItems={props.menuItems} emails={props.emails} activePage='/portfolio'/>
-        <PortfolioPageHeader/>
-        <main>
-          <PortfolioItemContainer items={props.portfolioItems}/>
-        </main>
-        <ContactFooter links={props.socialLinks} emails={props.emails}/>
-        <BottomNavBar activePage='/portfolio' emails={props.emails}/>
+      <Navbar
+        navItems={props.menuItems}
+        emails={props.emails}
+        activePage="/portfolio"
+      />
+      <PortfolioPageHeader />
+      <main>
+        <PortfolioItemContainer items={props.portfolioItems} />
+      </main>
+      <ContactFooter links={props.socialLinks} emails={props.emails} />
+      <BottomNavBar activePage="/portfolio" emails={props.emails} />
     </div>
-  )
+  );
 }
 
 export async function getStaticProps() {
-  const apolloClient = initializeApollo()
-  
+  const apolloClient = initializeApollo();
+
   await apolloClient.query({
     query: gql`
       query {
         menuItemCollection {
           items {
-          title
-          link
+            title
+            link
           }
         }
-        portfolioItemCollection(order:[sys_publishedAt_ASC]) {
+        portfolioItemCollection(order: [orderId_ASC]) {
           items {
-          title
-          image {
-            url
-          }
-          description
-          previewLink
-          repoLink
-          usesInternalPreview
-          anchorId
-          technologiesUsed
-          date
+            title
+            image {
+              url
+            }
+            description
+            previewLink
+            repoLink
+            usesInternalPreview
+            anchorId
+            technologiesUsed
+            date
           }
         }
         socialLinkCollection {
           items {
-          name
-          text
-          icon
-          url
+            name
+            text
+            icon
+            url
           }
         }
         emailCollection {
           items {
-          email
+            email
           }
         }
       }
     `,
-  })
-  
+  });
+
   return {
     props: {
-      menuItems: apolloClient.cache.extract().ROOT_QUERY.menuItemCollection.items,
+      menuItems:
+        apolloClient.cache.extract().ROOT_QUERY.menuItemCollection.items,
       emails: apolloClient.cache.extract().ROOT_QUERY.emailCollection.items,
-      portfolioItems: apolloClient.cache.extract().ROOT_QUERY['portfolioItemCollection({"order":["sys_publishedAt_ASC"]})'].items,
-      socialLinks: apolloClient.cache.extract().ROOT_QUERY.socialLinkCollection.items
-    }
-  }
+      portfolioItems:
+        apolloClient.cache.extract().ROOT_QUERY[
+          'portfolioItemCollection({"order":["orderId_ASC"]})'
+        ].items,
+      socialLinks:
+        apolloClient.cache.extract().ROOT_QUERY.socialLinkCollection.items,
+    },
+  };
 }
 
-export default Portfolio
+export default Portfolio;
