@@ -580,14 +580,14 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 70%;
+  max-width: 90%;
   margin: 0 auto;
 }
 
 /* Portfolio Page Item */
 .portfolio-item {
-  width: /*50*/ 70rem;
-  min-height: /*14*/ 25rem;
+  width: /*50*/ 100%;
+  min-height: /*14*/ 29rem;
   background-size: cover;
   background-position: center;
   border-radius: 1rem;
@@ -599,8 +599,7 @@ nav {
     0 13px 13px rgba(0, 0, 0, 0.23);
   position: relative;
   transition: 300ms ease-in-out;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  display: flex;
   margin-bottom: 1.5rem;
 }
 .portfolio-item:hover {
@@ -613,14 +612,14 @@ nav {
   margin-bottom: 2.5rem;
 }
 .portfolio-item-info {
-  width: /*25*/ 30rem;
+  width: /*25*/ 40%;
   padding: 1.5rem 2.375rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 .portfolio-item-image {
-  width: /*25*/ 40rem;
+  width: /*25*/ 60%;
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -642,7 +641,7 @@ nav {
     margin-left: 0.25rem;
   }
 }
-.portfolio-item-info p {
+.portfolio-item-info {
   color: #eee;
 }
 .portfolio-item-description {
@@ -688,28 +687,29 @@ nav {
   /*box-shadow: 0px 4px 2px 0px rgba(27,35,102,0.4);*/
 }
 
-@media (max-width: 1199.98px) {
+@media (max-width: 1359.98px) {
   .portfolio-item {
-    width: 100%;
-    max-width: 40rem;
-  }
-  .portfolio-item-info,
-  .portfolio-item-image {
-    grid-column: 1 / span 12;
+    min-height: unset;
   }
   .portfolio-item-image {
-    height: 20rem;
-    width: 100%;
-    max-width: 38.5rem;
+    width: 50%;
+    aspect-ratio: 16 / 9;
+    height: fit-content;
   }
   .portfolio-item-info {
-    width: 100%;
+    width: 50%;
   }
 }
 @media (max-width: 991.98px) {
+  .portfolio-item {
+    flex-direction: column;
+  }
   .portfolio-item-image {
-    height: 15rem;
-    width: auto;
+    width: calc(100% - 1.5rem);
+    height: auto;
+  }
+  .portfolio-item-info {
+    width: 100%;
   }
 }
 @media (max-width: 767.98px) {
@@ -721,16 +721,12 @@ nav {
       font-size: 1.125rem;
     }
   }
-  .portfolio-item-container {
-    max-width: 90%;
-  }
-  .portfolio-item {
-    width: 30rem;
+  .portfolio-item-title h3 {
+    font-size: 1.5rem;
   }
   .portfolio-item-info {
     width: auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding: 1rem 1.5rem;
   }
 }
 

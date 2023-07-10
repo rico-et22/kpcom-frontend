@@ -31,9 +31,12 @@ export default function PortfolioItem(props) {
                 : "Technologies used"}
             </div>
           </div>
-          <p className="portfolio-item-description">
-            {description ? description : "No description provided"}
-          </p>
+          <div
+            className="portfolio-item-description"
+            dangerouslySetInnerHTML={{
+              __html: description ? description : "No description provided",
+            }}
+          />
         </div>
         <div className="portfolio-item-down">
           <div className="portfolio-item-buttons-container">
