@@ -88,7 +88,10 @@ export function About(props) {
         </AboutInfoContainer>
       </main>
       <ContactFooter links={props.socialLinks} emails={props.emails} />
-      <BottomNavBar activePage="/about" resumeLink={props.resumeLinks[0].file.url} />
+      <BottomNavBar
+        activePage="/about"
+        resumeLink={props.resumeLinks[0].file.url}
+      />
     </div>
   );
 }
@@ -123,7 +126,7 @@ export async function getStaticProps() {
             text
           }
         }
-        aboutPageExperienceItemCollection {
+        aboutPageExperienceItemCollection(order: [orderId_ASC]) {
           items {
             companyName
             jobTitle
@@ -194,8 +197,9 @@ export async function getStaticProps() {
         apolloClient.cache.extract().ROOT_QUERY.aboutPageInfoTextCollection
           .items,
       aboutExperienceItems:
-        apolloClient.cache.extract().ROOT_QUERY
-          .aboutPageExperienceItemCollection.items,
+        apolloClient.cache.extract().ROOT_QUERY[
+          'aboutPageExperienceItemCollection({"order":["orderId_ASC"]})'
+        ].items,
       aboutEducationItems:
         apolloClient.cache.extract().ROOT_QUERY.aboutPageEducationItemCollection
           .items,
