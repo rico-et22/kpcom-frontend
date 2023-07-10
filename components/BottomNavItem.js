@@ -24,7 +24,7 @@ export default function BottomNavItem(props) {
           className="bottom-nav-item-svg"
           alt={props.icon}
         />
-        <p style={{ fontSize: ".75rem" }}>{props.caption}</p>
+        <p>{props.caption}</p>
       </Link>
     </li>
   );

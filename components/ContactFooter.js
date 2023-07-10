@@ -24,7 +24,6 @@ export default function ContactFooter(props) {
             key={index}/>
           ))}
         </div>
-        <p className='contact-footer-copyright'>{copyright()} <br/> Version 1.3 React + Next.js + Contentful</p>
       </div>
     </footer>
   )
