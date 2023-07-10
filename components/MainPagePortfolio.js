@@ -4,7 +4,7 @@ import LinkButton from '../components/LinkButton'
 export default function MainPagePortfolio(props) {
   return (
     <section className='mainpage-portfolio' id='portfolio'>
-      <h1>My latest projects</h1>
+      <h1>Recent projects</h1>
       <div className='mainpage-portfolio-items'>
       {props.items.slice(0, 3).map((item, index) => (
         <MainPagePortfolioItem 

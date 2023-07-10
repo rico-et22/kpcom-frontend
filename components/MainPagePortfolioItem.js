@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 export default function MainPagePortfolioItem(props) {
-  const { image, anchorID, title, technologiesUsed } = props.itemData;
+  const { image, anchorId, title, technologiesUsed } = props.itemData;
   return (
-    <Link href={`/portfolio#${anchorID}`}>
+    <Link href={`/portfolio#${anchorId}`}>
       <div
         className="mainpage-portfolio-item"
         style={{ backgroundImage: `url('${image.url}')` }}

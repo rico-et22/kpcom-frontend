@@ -120,7 +120,6 @@ nav {
 }
 /* Main page welcome header */
 .mainpage-header {
-  min-height: /*26.5*/ 30rem;
   background: radial-gradient(
     circle farthest-corner at 22.4% 21.7%,
     rgba(4, 189, 228, 1) 0%,
@@ -131,28 +130,15 @@ nav {
   color: $text-white;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 3rem 1rem;
   position: relative;
 }
 .mainpage-header-container {
   display: grid;
-  min-height: /*26.5*/ 30rem;
   width: 100%;
   position: relative;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 1rem;
-}
-.mainpage-header-photo {
-  grid-column: 1 / span 6;
-  align-self: center;
-  justify-self: center;
-}
-.mainpage-header-photo > img {
-  height: 15rem;
-  border-radius: 1rem;
-  display: block;
-  box-shadow: 0px 4.8px 14.4px rgba(100, 79, 59, 0.5),
-    0px 25.6px 57.6px rgba(100, 79, 59, 0.3);
 }
 .mainpage-header-info {
   grid-column: 1 / span 12;
@@ -221,11 +207,11 @@ nav {
   .mainpage-header-photo > img {
     margin-bottom: 1rem;
   }
-  .mainpage-header-info .link-button {
-    margin-bottom: 3rem;
-  }
 }
 @media (max-width: 767.98px) {
+  .mainpage-header {
+    padding: 2rem 1rem;
+  }
   .mainpage-header-info > h1 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
@@ -257,22 +243,19 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  max-width: 85%;
-  margin: 0 auto 2.5rem auto;
+  margin: 0 0 2.5rem 0;
 }
 .mainpage-portfolio-item {
-  /*min-width: 20rem;
-    height: 15rem;*/
-  min-width: 25rem;
-  height: 17rem;
+  width: 26rem;
+  height: 17.5rem;
+  margin: auto;
   background-size: cover;
-  background-position: center;
+  background-position: top;
   border-radius: 1rem;
-  box-shadow: /*0px 4px 4px rgba(0, 0, 0, 0.25)*//*0px 0.6px 1.8px rgba(0, 0, 0, 0.5), 0px 6px 7.2px rgba(0, 0, 0, 0.5);*/
-    0 0.3px 0.3px rgba(0, 0, 0, 0.059), 0 0.7px 0.7px rgba(0, 0, 0, 0.086),
-    0 1.3px 1.3px rgba(0, 0, 0, 0.106), 0 2.1px 2.1px rgba(0, 0, 0, 0.124),
-    0 3.4px 3.4px rgba(0, 0, 0, 0.144), 0 6px 6px rgba(0, 0, 0, 0.171),
-    0 13px 13px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 0.3px 0.3px rgba(0, 0, 0, 0.059),
+    0 0.7px 0.7px rgba(0, 0, 0, 0.086), 0 1.3px 1.3px rgba(0, 0, 0, 0.106),
+    0 2.1px 2.1px rgba(0, 0, 0, 0.124), 0 3.4px 3.4px rgba(0, 0, 0, 0.144),
+    0 6px 6px rgba(0, 0, 0, 0.171), 0 13px 13px rgba(0, 0, 0, 0.23);
   position: relative;
   transition: 300ms ease-in-out;
 }
@@ -286,13 +269,10 @@ nav {
 .mainpage-portfolio-item-caption {
   position: absolute;
   bottom: 0;
-  top: 60%;
   background: $blue-gradient;
   color: #eee;
   width: 100%;
   padding: 0.5rem 1rem;
-  /*background: linear-gradient(90deg, rgba(27, 35, 102, 0.8) 49.49%, rgba(0, 0, 0, 0.8) 101.08%);*/
-  /*background: linear-gradient(90deg, rgba(18, 84, 149, .8) 49.49%, rgba(11, 50, 89, 0.8) 101.08%);*/
   background: rgba(0, 0, 0, 0.65);
   border-radius: 0 0 1rem 1rem;
   -webkit-backdrop-filter: blur(10px);
@@ -340,9 +320,9 @@ nav {
 
   .mainpage-portfolio-item {
     width: 20rem;
-    height: 13.6rem;
-    margin: auto;
+    height: 15rem;
   }
+
   #site-root {
     padding-bottom: 3.75rem;
   }
@@ -351,11 +331,14 @@ nav {
   .mainpage-portfolio-items {
     flex-direction: column;
   }
+
+  .mainpage-portfolio-item {
+    width: 90%;
+  }
 }
 @media (max-width: 575.98px) {
   .mainpage-portfolio-item {
-    min-width: 20rem;
-    height: 13.6rem;
+    height: 16rem;
     h6 {
       display: none;
     }
@@ -364,10 +347,6 @@ nav {
 @media (max-width: 399.98px) {
   .mainpage-portfolio {
     padding: 2rem 0;
-  }
-  .mainpage-portfolio-item {
-    width: 100%;
-    min-width: 100%;
   }
   .mainpage-portfolio-item-caption h6 {
     display: none;
@@ -507,8 +486,8 @@ nav {
 .bottom-nav {
   position: fixed;
   bottom: 0;
-  height: 3.75rem;
-  background-color: rgba(173, 173, 173, 0.7);
+  height: 4.5rem;
+  background-color: rgba(200, 200, 200, 0.9);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   width: 100%;
@@ -536,6 +515,7 @@ nav {
 .bottom-nav-item {
   text-decoration: none;
   color: $text-black;
+  padding: 0.25rem;
 }
 .bottom-nav-item p {
   text-align: center;
@@ -578,7 +558,6 @@ nav {
 .portfolio-page-header-text > h2 {
   font-weight: 400;
   font-size: 1.5rem;
-  color: $text-gray;
 }
 .portfolio-page-header-image {
   z-index: 1;

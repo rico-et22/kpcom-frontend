@@ -24,7 +24,7 @@ export function About(props) {
       </Head>
       <Navbar
         navItems={props.menuItems}
-        emails={props.emails}
+        resumeLink={props.resumeLinks[0].file.url}
         activePage="/about"
       />
       <AboutHeader
@@ -88,7 +88,7 @@ export function About(props) {
         </AboutInfoContainer>
       </main>
       <ContactFooter links={props.socialLinks} emails={props.emails} />
-      <BottomNavBar activePage="/about" emails={props.emails} />
+      <BottomNavBar activePage="/about" resumeLink={props.resumeLinks[0].file.url} />
     </div>
   );
 }

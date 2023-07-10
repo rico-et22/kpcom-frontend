@@ -12,7 +12,7 @@ export default function Navbar(props) {
         </Link>
         <NavbarMenu
           navItems={props.navItems}
-          emails={props.emails}
+          resumeLink={props.resumeLink}
           activePage={props.activePage}
         />
       </nav>

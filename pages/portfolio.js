@@ -20,7 +20,7 @@ export function Portfolio(props) {
       </Head>
       <Navbar
         navItems={props.menuItems}
-        emails={props.emails}
+        resumeLink={props.resumeLinks[0].file.url}
         activePage="/portfolio"
       />
       <PortfolioPageHeader />
@@ -28,7 +28,10 @@ export function Portfolio(props) {
         <PortfolioItemContainer items={props.portfolioItems} />
       </main>
       <ContactFooter links={props.socialLinks} emails={props.emails} />
-      <BottomNavBar activePage="/portfolio" emails={props.emails} />
+      <BottomNavBar
+        activePage="/portfolio"
+        resumeLink={props.resumeLinks[0].file.url}
+      />
     </div>
   );
 }
@@ -73,6 +76,13 @@ export async function getStaticProps() {
             email
           }
         }
+        resumeLinkCollection {
+          items {
+            file {
+              url
+            }
+          }
+        }
       }
     `,
   });
@@ -88,6 +98,8 @@ export async function getStaticProps() {
         ].items,
       socialLinks:
         apolloClient.cache.extract().ROOT_QUERY.socialLinkCollection.items,
+      resumeLinks:
+        apolloClient.cache.extract().ROOT_QUERY.resumeLinkCollection.items,
     },
   };
 }

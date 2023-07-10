@@ -18,13 +18,17 @@ function Index(props) {
           content="Kamil Pawlak - front-end web developer"
         />
       </Head>
-      <Navbar navItems={props.menuItems} emails={props.emails} activePage="/" />
+      <Navbar
+        navItems={props.menuItems}
+        resumeLink={props.resumeLinks[0].file.url}
+        activePage="/"
+      />
       <main>
         <MainPageHeader />
         <MainPagePortfolio items={props.portfolioItems} />
         <ContactFooter links={props.socialLinks} emails={props.emails} />
       </main>
-      <BottomNavBar activePage="/" emails={props.emails} />
+      <BottomNavBar activePage="/" resumeLink={props.resumeLinks[0].file.url} />
     </div>
   );
 }
@@ -64,6 +68,13 @@ export async function getStaticProps() {
             email
           }
         }
+        resumeLinkCollection {
+          items {
+            file {
+              url
+            }
+          }
+        }
       }
     `,
   });
@@ -79,6 +90,8 @@ export async function getStaticProps() {
         ].items,
       socialLinks:
         apolloClient.cache.extract().ROOT_QUERY.socialLinkCollection.items,
+      resumeLinks:
+        apolloClient.cache.extract().ROOT_QUERY.resumeLinkCollection.items,
     },
   };
 }
